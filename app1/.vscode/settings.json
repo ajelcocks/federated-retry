@@ -1,0 +1,7 @@
+{
+  "editor.minimap.enabled": false,
+  "editor.tabSize": 2,
+  "files.eol": "\n",
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "workbench.startupEditor": "none"
+}
