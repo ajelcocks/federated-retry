@@ -1,0 +1,35 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Start App1",
+      "type": "shell",
+      "windows": {
+        "command": "start cmd /k npm run start && exit",
+        "options": {
+          "cwd": "app1"
+        }
+      },
+      "presentation": {
+        "reveal": "never",
+        "panel": "shared"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Start App2",
+      "type": "shell",
+      "windows": {
+        "command": "start cmd /k npm run start && exit",
+        "options": {
+          "cwd": "app2"
+        }
+      },
+      "presentation": {
+        "reveal": "never",
+        "panel": "shared"
+      },
+      "problemMatcher": []
+    }
+  ]
+}
