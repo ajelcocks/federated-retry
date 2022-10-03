@@ -50,6 +50,8 @@ module.exports = {
         parallel: true
       }
     }),
-    new DynamicImportWebpackPlugin({})
+    new DynamicImportWebpackPlugin({
+      remotes: ["app2"]
+    })
   ]
 };
