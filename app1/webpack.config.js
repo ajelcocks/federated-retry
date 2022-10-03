@@ -1,13 +1,15 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { ModuleFederationPlugin } = require('webpack').container;
 const WebpackShellPluginNext = require('webpack-shell-plugin-next');
-const deps = require('./package.json').dependencies
+
+const DynamicImportWebpackPlugin = require("./DynamicImportWebpackPlugin");
 
 const path = require('path');
 
 module.exports = {
   entry: './src/index',
   mode: 'development',
+  devtool: 'source-map',
   devServer: {
     static: {
       directory: path.join(__dirname, 'dist'),
@@ -15,8 +17,9 @@ module.exports = {
     port: 3001,
   },
   output: {
-    publicPath: 'auto',
-  },
+    filename: '[name].js',
+    path: path.join(__dirname, '/static/js-build'),  // compile to ./static/js-build
+},
   module: {
     rules: [
       {
@@ -46,6 +49,7 @@ module.exports = {
         blocking: false,
         parallel: true
       }
-    })
-  ],
+    }),
+    new DynamicImportWebpackPlugin({})
+  ]
 };

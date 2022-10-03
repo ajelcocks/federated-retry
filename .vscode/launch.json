@@ -8,6 +8,19 @@
             "url": "http://localhost:3001",
             "webRoot": "${workspaceFolder}",
             "sourceMaps": true,
+            "sourceMapPathOverrides": {
+                "webpack:///./~/*": "${webRoot}/node_modules/*",  // a default
+                "webpack:///./*":   "${webRoot}/js-src/*",        // unsure how/why webpack generates ./links.js
+                "webpack:///../*": "${webRoot}/js-src/*",         // unsure how/why webpack generates ../links.js
+                "webpack:///*":     "*",                           // a default, catch everything else
+                "webpack://*": "${webroot}/app1/src/*",
+                "webpack:/@*": "${webroot}/app1/src/*",
+                "webpack:\\\\@*": "${webroot}/app1/src/*",
+              },
+            "userDataDir": false,
+            "runtimeArgs": [
+              "--profile-directory=React"
+            ],
         },
         {
           "name": "App2",
