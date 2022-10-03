@@ -1,13 +1,13 @@
 const FEDERATED_RELOAD = '__federated_reload';
 
-class DynamicImportWebpackPlugin {
+class FederatedImportWebpackPlugin {
   constructor(options) {
     this._options = options;
     this._remotes = options.remotes;
   }
 
   // This gets translated to a string in the tap('Require' method inside the apply method (below)
-  __federated_require = (moduleId, cache, remotes) => {
+  __federated_reload = (moduleId, cache, remotes) => {
     const WEBPACK_CONTAINER = 'webpack/container/';
     remotes.forEach((appName) => {
       const referenceId = `${WEBPACK_CONTAINER}reference/${appName}`;
@@ -28,11 +28,11 @@ class DynamicImportWebpackPlugin {
   }
 
   apply(compiler) {
-    compiler.hooks.compilation.tap('DynamicImportReload', (compilation) => {
+    compiler.hooks.compilation.tap('FederatedImportReload', (compilation) => {
       // This gets inserted above the webpack function that detects the cached modules
       compilation.mainTemplate.hooks.localVars.tap('Require', (source) => {
         return `
-          var ${FEDERATED_RELOAD} = ${this.__federated_require}
+          var ${FEDERATED_RELOAD} = ${this.__federated_reload}
           `;
       });
       // This gets inserted inside of and before code in the webpack function that processes dynamic imports
@@ -47,4 +47,4 @@ class DynamicImportWebpackPlugin {
   }
 };
 
-module.exports = DynamicImportWebpackPlugin
+module.exports = FederatedImportWebpackPlugin

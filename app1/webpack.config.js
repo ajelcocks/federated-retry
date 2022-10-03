@@ -2,7 +2,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { ModuleFederationPlugin } = require('webpack').container;
 const WebpackShellPluginNext = require('webpack-shell-plugin-next');
 
-const DynamicImportWebpackPlugin = require("./DynamicImportWebpackPlugin");
+const FederatedReloadWebpackPlugin = require("./FederatedReloadWebpackPlugin");
 
 const path = require('path');
 
@@ -18,7 +18,7 @@ module.exports = {
   },
   output: {
     filename: '[name].js',
-    path: path.join(__dirname, '/static/js-build'),  // compile to ./static/js-build
+    path: path.join(__dirname, '/static/js-build'),
 },
   module: {
     rules: [
@@ -50,7 +50,7 @@ module.exports = {
         parallel: true
       }
     }),
-    new DynamicImportWebpackPlugin({
+    new FederatedReloadWebpackPlugin({
       remotes: ["app2"]
     })
   ]
