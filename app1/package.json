@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "devDependencies": {
+    "@aje/federated-reload-webpack-plugin": "^0.1.0",
     "@babel/core": "^7.19.1",
     "@babel/preset-react": "^7.18.6",
     "babel-loader": "^8.2.5",
@@ -17,7 +18,8 @@
     "start": "webpack-cli serve",
     "build": "webpack --mode production",
     "serve": "serve dist -p 3001",
-    "clean": "rm -rf dist"
+    "clean": "rm -rf dist",
+    "reinstall": "npm uninstall @aje/federated-reload-webpack-plugin && npm install -D @aje/federated-reload-webpack-plugin"
   },
   "dependencies": {
     "react": "^18.2.0",

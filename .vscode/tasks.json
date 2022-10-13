@@ -30,6 +30,21 @@
         "panel": "shared"
       },
       "problemMatcher": []
-    }
-  ]
+    },
+    {
+      "label": "Publish",
+      "type": "shell",
+      "dependsOn":"Clean",
+      "windows": {
+        "command": "npm run pub",
+        "options": {
+          "cwd" :"federated-reload-webpack-plugin"
+        }
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      },
+      "problemMatcher": []
+    }  ]
 }

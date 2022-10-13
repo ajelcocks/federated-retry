@@ -1,0 +1,21 @@
+{
+  "name": "@aje/federated-reload-webpack-plugin",
+  "version": "0.1.0",
+  "description": "Enable reload of federated imports that failed",
+  "main": "index.js",
+  "scripts": {
+    "pub": "npm publish --registry=http://localhost:4873",
+    "test": "mocha --reporter spec"
+  },
+  "keywords": [],
+  "author": "Anthony Elcocks",
+  "license": "MIT",
+  "devDependencies": {
+    "chai": "^4.3.6",
+    "mocha": "^10.0.0",
+    "sinon": "^14.0.1"
+  },
+  "dependencies": {
+    "webpack": "^5.74.0"
+  }
+}
