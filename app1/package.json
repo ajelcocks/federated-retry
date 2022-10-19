@@ -17,7 +17,7 @@
   "scripts": {
     "start": "webpack-cli serve",
     "build": "webpack --mode production",
-    "serve": "serve dist -p 3001",
+    "serve": "serve dist -p 3101",
     "clean": "rm -rf dist",
     "reinstall": "npm uninstall @aje/federated-reload-webpack-plugin && npm install -D @aje/federated-reload-webpack-plugin"
   },

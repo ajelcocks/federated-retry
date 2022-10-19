@@ -5,7 +5,7 @@
           "name": "Crome",
           "request": "launch",
           "type": "chrome",
-          "url": "http://localhost:3002",
+          "url": "http://localhost:3102",
           "webRoot": "${workspaceFolder}",
           "sourceMaps": true,
           "sourceMapPathOverrides": {

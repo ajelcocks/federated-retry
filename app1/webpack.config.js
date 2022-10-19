@@ -2,7 +2,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { ModuleFederationPlugin } = require('webpack').container;
 const WebpackShellPluginNext = require('webpack-shell-plugin-next');
 
-const FederatedReloadWebpackPlugin = require("./FederatedReloadWebpackPlugin");
+//const FederatedReloadWebpackPlugin = require("../federated-reload-webpack-plugin/index.js");
+const FederatedReloadWebpackPlugin = require("@aje/federated-reload-webpack-plugin");
 
 const path = require('path');
 
@@ -14,7 +15,7 @@ module.exports = {
     static: {
       directory: path.join(__dirname, 'dist'),
     },
-    port: 3001,
+    port: 3101,
   },
   output: {
     filename: '[name].js',
@@ -36,7 +37,7 @@ module.exports = {
     new ModuleFederationPlugin({
       name: 'app1',
       remotes: {
-        app2: `app2@http://localhost:3002/remoteEntry.js`,
+        app2: `app2@http://localhost:3102/remoteEntry.js`,
       },
       shared: ['react'],
     }),
@@ -45,7 +46,7 @@ module.exports = {
     }),
     new WebpackShellPluginNext({
       onBuildEnd:{
-        scripts: ['title App1 3001'],
+        scripts: ['title App1 3101'],
         blocking: false,
         parallel: true
       }

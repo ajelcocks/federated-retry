@@ -12,7 +12,7 @@ describe('canary test', () => {
 
 // describe('An async test should return a promise', () => {
 //   it('An async test', async () => {
-//     return import("http://localhost:3001/remoteEntry.js")
+//     return import("http://localhost:3101/remoteEntry.js")
 //       .then(() => {
 //         expect(true).to.be.true;
 //       })

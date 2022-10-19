@@ -12,7 +12,7 @@ module.exports = {
     static: {
       directory: path.join(__dirname, 'dist'),
     },
-    port: 3002,
+    port: 3102,
   },
   output: {
     publicPath: 'auto',
@@ -49,7 +49,7 @@ module.exports = {
     }),
     new WebpackShellPluginNext({
       onBuildEnd:{
-        scripts: ['title App2 3002'],
+        scripts: ['title App2 3102'],
         blocking: false,
         parallel: true
       }

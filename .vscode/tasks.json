@@ -32,6 +32,21 @@
       "problemMatcher": []
     },
     {
+      "label": "Clean",
+      "type": "shell",
+      "windows": {
+        "command": "npm run del",
+        "options": {
+          "cwd" :"federated-reload-webpack-plugin"
+        }
+      },
+      "presentation": {
+        "reveal": "never",
+        "panel": "shared"
+      },
+      "problemMatcher": []
+    },
+    {
       "label": "Publish",
       "type": "shell",
       "dependsOn":"Clean",
@@ -43,8 +58,9 @@
       },
       "presentation": {
         "reveal": "always",
-        "panel": "new"
+        "panel": "shared"
       },
       "problemMatcher": []
-    }  ]
+    }
+  ]
 }
