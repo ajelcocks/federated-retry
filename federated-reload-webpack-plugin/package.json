@@ -1,11 +1,12 @@
 {
-  "name": "@aje/federated-reload-webpack-plugin",
+  "name": "@nuance/federated-reload-webpack-plugin",
   "version": "0.1.0",
   "description": "Enable reload of federated imports that failed",
   "main": "index.js",
   "scripts": {
-    "del": "rimraf C:\\Users\\anthony_elcocks\\.config\\verdaccio\\storage\\@aje\\federated-reload-webpack-plugin",
-    "pub": "npm publish --registry=http://localhost:4873",
+    "del": "rimraf C:\\Users\\anthony_elcocks\\.config\\verdaccio\\storage\\@nuance\\federated-reload-webpack-plugin",
+    "pub:local": "npm publish --@nuance:registry=http://localhost:4873",
+    "pub:prod": "npm publish",
     "test": "mocha --reporter spec"
   },
   "keywords": [],

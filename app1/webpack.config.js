@@ -20,7 +20,7 @@ module.exports = {
   output: {
     filename: '[name].js',
     path: path.join(__dirname, '/static/js-build'),
-},
+  },
   module: {
     rules: [
       {
