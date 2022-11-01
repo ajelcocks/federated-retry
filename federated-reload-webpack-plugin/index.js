@@ -1,5 +1,6 @@
 'use strict'
 const JavascriptModulesPlugin = require("webpack/lib/javascript/JavascriptModulesPlugin");
+const getRemoteEntry = require("./getRemoteEntry");
 
 const FEDERATED_RELOAD = '__federated_reload';
 
@@ -70,4 +71,5 @@ ${source}`;
   }
 };
 
-module.exports = FederatedReloadWebpackPlugin
+module.exports = FederatedReloadWebpackPlugin;
+module.exports.getRemoteEntry = getRemoteEntry;

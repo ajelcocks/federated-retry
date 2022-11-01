@@ -1,6 +1,6 @@
 {
   "name": "@nuance/federated-reload-webpack-plugin",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Enable reload of federated imports that failed",
   "main": "index.js",
   "scripts": {
