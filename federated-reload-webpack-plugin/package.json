@@ -4,7 +4,6 @@
   "description": "Enable reload of federated imports that failed",
   "main": "index.js",
   "scripts": {
-    "del": "rimraf C:\\Users\\anthony_elcocks\\.config\\verdaccio\\storage\\@nuance\\federated-reload-webpack-plugin",
     "pub:local": "npm publish --@nuance:registry=http://localhost:4873",
     "pub:prod": "npm publish",
     "test": "mocha --reporter spec"
